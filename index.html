@@ -1,32 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRAP</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <style>
-        #map {
-            height: 100vh; /* Asegura que el mapa ocupe toda la pantalla */
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Web</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="map"></div>
-    <script>
-        var map = L.map('map').setView([51.505, -0.09], 13); // Coordenadas y nivel de zoom
-
-        // Usar OpenStreetMap como capa base
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Añadir un marcador en las coordenadas proporcionadas
-        L.marker([51.505, -0.09]).addTo(map)
-            .bindPopup('Este es un marcador.')
-            .openPopup();
-    </script>
+  <div id="splash-screen">
+    <div id="skull"></div>
+  </div>
 </body>
 </html>
