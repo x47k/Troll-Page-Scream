@@ -1,115 +1,47 @@
-* {
-    margin: 0;
-    padding: 0;
+/* Fondo de la pantalla de carga */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  z-index: 9999;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
+/* Estilo de la calavera */
+#skull {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  clip-path: polygon(50% 0%, 60% 15%, 85% 30%, 70% 45%, 80% 70%, 50% 85%, 20% 70%, 30% 45%, 15% 30%, 40% 15%);
+  animation: skull-animation 1s infinite alternate;
 }
 
-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none;
+/* Animación de la calavera */
+@keyframes skull-animation {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.7;
+  }
 }
 
-p,
-h2 {
-    text-align: center;
+/* Estilo del contenido de la web */
+.content {
+  display: none;
 }
 
-.gif {
-    height: 25px;
-    margin-bottom: 20px;
+body.loaded .content {
+  display: block;
 }
 
-.text {
-    margin-bottom: 20px;
-}
-
-.link {
-    font-size: 12px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.recaptcha-container {
-    display: none;
-    align-items: center;
-
-    width: 300px;
-    height: 74px;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 4px;
-    border-color: rgb(224, 224, 224);
-    background-color: rgb(250, 250, 250);
-    margin-bottom: 20px;
-}
-
-.button-container {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.button {
-    width: 28px;
-    height: 28px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #b2b2b2;
-    border-radius: 4px;
-    background-color: rgb(255, 255, 255);
-    top: 0px;
-    left: 0px;
-    cursor: pointer;
-}
-
-.text-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 65px;
-}
-
-.image-container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.image-container img {
-    width: 58px;
-    height: 58px;
-}
-
-.image-container p {
-    font-size: 9px;
-    color: #999999;
-}
-
-.counter {
-    padding-bottom: 40px;
-}
-
-.text-captcha {
-    display: none;
+body.loaded #splash-screen {
+  display: none;
 }
