@@ -1,47 +1,36 @@
-/* Fondo de la pantalla de carga */
-#splash-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  z-index: 9999;
-}
-
-/* Estilo de la calavera */
-#skull {
-  width: 100px;
-  height: 100px;
-  background-color: green;
-  clip-path: polygon(50% 0%, 60% 15%, 85% 30%, 70% 45%, 80% 70%, 50% 85%, 20% 70%, 30% 45%, 15% 30%, 40% 15%);
-  animation: skull-animation 1s infinite alternate;
-}
-
-/* Animación de la calavera */
-@keyframes skull-animation {
-  0% {
-    transform: rotate(0deg);
-    opacity: 1;
+body {
+    margin: 0;
+    background-color: #0e0e0e;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
   }
-  100% {
-    transform: rotate(360deg);
+  
+  .centered {
+    text-align: center;
+  }
+  
+  #title {
+    font-size: 4rem;
+    font-weight: bold;
+    animation: colorShift 5s infinite;
+  }
+  
+  #subtitle {
+    margin-top: 1rem;
+    font-size: 1.2rem;
     opacity: 0.7;
   }
-}
-
-/* Estilo del contenido de la web */
-.content {
-  display: none;
-}
-
-body.loaded .content {
-  display: block;
-}
-
-body.loaded #splash-screen {
-  display: none;
-}
+  
+  @keyframes colorShift {
+    0%   { color: #ff00ff; }
+    25%  { color: #00ffff; }
+    50%  { color: #ffcc00; }
+    75%  { color: #00ff00; }
+    100% { color: #ff00ff; }
+  }
+  
