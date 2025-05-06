@@ -1,21 +1,107 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FEIN</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tracked.rest</title>
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: #0d0d11; /* Fondo oscuro */
+            color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        /* Títulos */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #6d28d9, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0;
+            color: #a1a1aa;
+        }
+
+        /* Texto descriptivo */
+        p {
+            font-size: 1.1rem;
+            color: #d4d4d8;
+            max-width: 600px;
+            margin: 1.5rem auto;
+        }
+
+        /* Botones */
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: #6d28d9;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #7c3aed;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #a1a1aa;
+            border: 1px solid #3f3f46;
+        }
+
+        .btn-secondary:hover {
+            border-color: #6d28d9;
+            color: white;
+        }
+    </style>
+    <!-- Fuente de Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="splash-screen">
-    <div id="skull"></div>
-  </div>
-  <script>
-  window.onload = () => {
-    setTimeout(() => {
-      document.body.classList.add('loaded');
-    }, 2000);
-  };
-</script>
+    <div class="container">
+        <h1>web in maintenance</h1>
+        <h2>att: maik</h2>
+        <p>
+            Powerful analytics for developers, server owners, and community managers. 
+            Gain insights, monitor growth, and analyze trends effortlessly.
+        </p>
+        <div class="buttons">
+            <a href="#" class="btn btn-primary">Get Started</a>
+            <a href="#" class="btn btn-secondary">Changelog</a>
+        </div>
+    </div>
 </body>
 </html>
