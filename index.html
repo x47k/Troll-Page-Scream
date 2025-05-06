@@ -86,11 +86,85 @@
             border-color: #6d28d9;
             color: white;
         }
+
+        /* Menú desplegable */
+        .dropdown {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .dropdown-btn {
+            background-color: #1e1e24;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #2d2d3a;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1e1e24;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 6px;
+            padding: 10px 0;
+            margin-top: 5px;
+        }
+
+        .dropdown-content a {
+            color: #d4d4d8;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #2d2d3a;
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .discord-icon {
+            width: 16px;
+            height: 16px;
+        }
     </style>
     <!-- Fuente de Google Fonts (Inter) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Menú desplegable -->
+    <div class="dropdown">
+        <button class="dropdown-btn">
+            <svg class="discord-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.54 0c1.356 0 2.46 1.104 2.46 2.472v19.056c0 1.368-1.104 2.472-2.46 2.472H16.44c-1.248 0-2.16-.984-2.16-2.28v-1.224h-4.56v1.224c0 1.296-.912 2.28-2.16 2.28H4.46C3.104 24 2 22.896 2 21.528V2.472C2 1.104 3.104 0 4.46 0h15.08zm-6.84 15.672c1.248 0 2.28-1.032 2.28-2.28s-1.032-2.28-2.28-2.28-2.28 1.032-2.28 2.28 1.032 2.28 2.28 2.28zm-5.52 0c1.248 0 2.28-1.032 2.28-2.28s-1.032-2.28-2.28-2.28-2.28 1.032-2.28 2.28 1.032 2.28 2.28 2.28zm11.04-6.912h-14.4v-4.32c0-.744.576-1.32 1.32-1.32h11.76c.744 0 1.32.576 1.32 1.32v4.32z"/>
+            </svg>
+            Contacto
+        </button>
+        <div class="dropdown-content">
+            <a href="https://discord.com/users/612800270098759711" target="_blank">Discord: @0x8bc394lt21</a>
+            <a href="mailto:maikonthetop@gmail.com">Email: maikonthetop@gmail.com</a>
+        </div>
+    </div>
+
     <div class="container">
         <h1>web in maintenance</h1>
         <h2>att: maik</h2>
@@ -102,5 +176,15 @@
             <a href="#" class="btn btn-secondary">Changelog</a>
         </div>
     </div>
+
+    <script>
+        // Pequeño script para mejorar la experiencia en móviles
+        document.querySelector('.dropdown').addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                const content = this.querySelector('.dropdown-content');
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    </script>
 </body>
 </html>
